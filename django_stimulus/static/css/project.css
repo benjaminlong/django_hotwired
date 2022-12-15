@@ -1,0 +1,48 @@
+/* These styles are generated from project.scss. */
+
+.alert-debug {
+  color: black;
+  background-color: white;
+  border-color: #d6e9c6;
+}
+
+.alert-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+
+/*.navbar-brand.is-fullwidth {*/
+  /*width:100%;*/
+/*}*/
+.has-background-image {
+  position: relative;
+  width: 100%;
+  background-image: url("/static/images/backgrounds/lacanau-view.jpg");
+  background-size: cover;
+}
+
+.has-background-image::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #020228;
+    bottom: 0;
+    left: 0;
+    opacity: 0.6;
+    content: "";
+}
+
+.modal-background.is-white {
+    background-color: rgba(255,255,255,0.86);
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+}
+
+.sticky.sticky-top {
+  top: 0;
+}

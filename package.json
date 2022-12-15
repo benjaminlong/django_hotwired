@@ -1,0 +1,25 @@
+{
+  "name": "django_stimulus",
+  "version": "0.1.0",
+  "main": " ",
+  "author": "Jiben2",
+  "license": "MIT",
+  "scripts": {
+    "pack": "webpack",
+    "start:dev": "webpack-dev-server"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "bulma": "^0.8.2",
+    "bulma-dashboard": "^0.3.1",
+    "stimulus": "^1.1.1",
+    "turbolinks": "^5.2.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
