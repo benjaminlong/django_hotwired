@@ -1,0 +1,25 @@
+pytz==2019.3  # https://github.com/stub42/pytz
+#python-slugify==4.0.0  # https://github.com/un33k/python-slugify
+#Pillow==7.1.1  # https://github.com/python-pillow/Pillow
+argon2-cffi==19.2.0  # https://github.com/hynek/argon2_cffi
+#redis # https://github.com/andymccurdy/redis-py
+
+# Django
+# ------------------------------------------------------------------------------
+django>=4.0.0  # pyup: < 3.1  # https://www.djangoproject.com/
+django-environ==0.4.5  # https://github.com/joke2k/django-environ
+django-model-utils==4.0.0  # https://github.com/jazzband/django-model-utils
+#django-allauth==0.41.0  # https://github.com/pennersr/django-allauth
+#django-redis==4.11.0  # https://github.com/niwinz/django-redis
+#django-pipeline==1.7.0
+
+# -----------------------------------------------------------------------------
+# Python-sql Database Adapter
+# -----------------------------------------------------------------------------
+psycopg2-binary>=2.8.6 # https://github.com/psycopg/psycopg2
+
+
+# -----------------------------------------------------------------------------
+# Mailchimp Client to ease Marketing Email Newsletter Integration
+# -----------------------------------------------------------------------------
+mailchimp_marketing>=3.0.80, <4.0.0

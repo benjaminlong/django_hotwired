@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block header %}
+  {% include "components/navbar_component.html" with active_tab='about'%}
+{% endblock %}
+
+{% block content %}
+  <section class="hero is-fullheight-with-navbar is-success is-bold has-text-centered">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Section About
+        </h1>
+        <div data-controller="clipboard">
+          PIN: <input data-target="clipboard.source" type="text" value="3737" readonly>
+          <button data-action="clipboard#copy" class="clipboard-button">Copy to Clipboard</button>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

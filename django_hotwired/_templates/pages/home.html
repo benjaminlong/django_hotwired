@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <section class="hero is-fullheight is-bold has-text-centered has-background-image has-bg-home">
+    <!-- Hero head: will stick at the top -->
+    <div class="hero-head">
+      <header class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+{#            <a class="navbar-item">#}
+{#            </a>#}
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="font-bold text-center text-2xl">
+          The Sofa Remote Agency
+        </h1>
+        <h2 class="subtitle has-text-white">
+          Full-Stack Web development Consulting
+        </h2>
+
+        <a class="button is-info" href="{% url 'work' %}">
+          {% trans 'Discover our work' %}
+        </a>
+
+{#        <div data-controller="scroller">#}
+{#          <button class="button"#}
+{#                  data-action="click->scroller#scrollTo"#}
+{#                  data-scroll-to-selector="div.hero-foot">#}
+{#            Scroll Down#}
+{#          </button>#}
+{#        </div>#}
+{#        <div data-controller="hello">#}
+{#          <input class="input" type="text" data-target="hello.name">#}
+{#          <div class="field has-addons">#}
+{#            <div class="control">#}
+{#              <input class="input"#}
+{#                     type="text"#}
+{#                     placeholder="Find a repository"#}
+{#                     data-target="hello.name">#}
+{#            </div>#}
+{#            <div class="control">#}
+{#              <button class="button is-info" data-action="click->hello#jsAction">#}
+{#                Action#}
+{#              </button>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+      </div>
+    </div>
+
+    <!-- Hero footer: will stick at the bottom -->
+    <div class="hero-foot has-text-white"
+         style="z-index: 1">
+      <div class="">
+        <a href="#about" class="icon has-text-white">
+          <i class="fa fa-angle-down fa-3x"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {% include "components/navbar_component.html" with classNames='sticky sticky-top' %}
+
+  <section id="about" class="hero hero-about is-fullheight is-bold has-text-centered">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Section About
+        </h1>
+      </div>
+    </div>
+  </section>
+{% endblock %}

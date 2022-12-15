@@ -1,0 +1,16 @@
+// Importing bulma
+@import "bulma";
+
+// Importing Tailwindcss
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Importing Owned styles
+@import "home";
+
+.hello {
+  background: red;
+  width: 10px;
+  height: 10px;
+}
