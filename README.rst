@@ -1,7 +1,13 @@
 Django Hotwired
 ===============
 
-Simple Django Project.
+Simple Django Boilerplate Project.
+
+This project is a Django Lab project. It aims to search and
+find different approach to embellished server-side rendering.
+
+The project will explore @hotwire/stimulus and @hotwire/turbo js project.
+See :ref:package.json for client dependencies.
 
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
@@ -17,10 +23,22 @@ Simple Django Project.
 About
 -----
 
-All recent changes are logged in inside the [CHANGELOG](CHANGELOG.md) file.
+All recent changes are logged in inside the CHANGELOG.md file.
 
 - **Dependabot**: [Report]()
 - TODO: Add access to flake8, unit-test and coverage reports
+
+Current configuration:
+
+- Python: 3.8+
+- Django: last version.
+- PostgresSQL db: 14+.
+
+Client:
+
+- Django Template engine
+- yarn + webpack for scss/js/ts
+- @hotwired/stimulus, @hotwired/turbo
 
 
 Documentation

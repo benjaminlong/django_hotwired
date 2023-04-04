@@ -7,8 +7,11 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    path("components/", TemplateView.as_view(template_name="pages/components.html"), name="components"),
     path("about/", TemplateView.as_view(template_name="pages/about.html"), name="about"),
     path("work/", TemplateView.as_view(template_name="pages/work.html"), name="work"),
+    # Django translation /set-language
+    path("dj_i18n/", include("django.conf.urls.i18n")),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management

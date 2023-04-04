@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<div class="sticky top-0">
+  {% include "components/navbars/default.html" %}
+</div>
+
+<div class="">
+  <section class="p-4 md:p-5 md:m-5 border-b">
+    <div class="flex flex-col">
+      <h1 class="font-bold text-xl">The Sofa Lab's Components</h1>
+      <h2 class="font-semibold text-lg">List of all components used by this project</h2>
+    </div>
+  </section>
+  <div class="flex flex-col p-3 md:p-5 w-full md:w-3/4 lg:w-2/3 mx-auto space-y-4">
+    <div class="py-2 px-3 border">
+      <h3 class="font-semibold text-lg">Forms</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+        <div class="flex flex-col">
+          <h4 class="font-semibold text-lg">Language Select</h4>
+          {% include "components/forms/language_select.html" %}
+        </div>
+      </div>
+    </div>
+
+    <div class="py-2 px-3 border">
+      <h3 class="font-semibold text-lg">Navbars</h3>
+
+      <h4>Base</h4>
+      {% include "components/navbars/base.html" %}
+
+      <h4>Default</h4>
+      {% include "components/navbars/default.html" %}
+    </div>
+
+    <div class="py-2 px-3 border">
+      <h3 class="font-semibold text-lg">Menus</h3>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+        <div class="flex flex-col">
+          <h4>Example</h4>
+          {% include "components/menus/example.html" %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

@@ -5,6 +5,8 @@ from pathlib import Path
 
 import environ
 
+from django.utils.translation import gettext_lazy as _
+
 ROOT_DIR = Path(__file__).parents[2]
 # django_hotwired/)
 APPS_DIR = ROOT_DIR / "django_hotwired"
@@ -26,6 +28,11 @@ DEBUG = env.bool("DJANGO_DEBUG", False)
 TIME_ZONE = "UTC"
 # https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = "en-us"
+LANGUAGES = [
+    ("en-us", _("English (US)")),
+    ("fr", _("Français")),
+]
+
 # https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
 # https://docs.djangoproject.com/en/dev/ref/settings/#use-i18n
@@ -142,7 +149,6 @@ STATICFILES_FINDERS = [
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-STATICFILES_STORAGE
 # STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
-STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
 
 # MEDIA
 # ------------------------------------------------------------------------------
@@ -159,7 +165,10 @@ TEMPLATES = [
         # https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-TEMPLATES-BACKEND
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         # https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
-        "DIRS": [str(APPS_DIR / "_templates")],
+        "DIRS": [
+            str(APPS_DIR / "_templates"),
+            str(APPS_DIR / "_assets"),
+        ],
         "OPTIONS": {
             # https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
             # https://docs.djangoproject.com/en/dev/ref/templates/api/#loader-types
