@@ -6,7 +6,7 @@ from mailchimp_marketing.api_client import ApiClientError
 
 from django.conf import settings
 
-logger = logging.getLogger("newsomatic")
+logger = logging.getLogger("django_hotwired")
 
 # -----------------------------------------------------------------------------
 # Mailchimp - Init Mailchimp Client from `mailchimp_marketing` package

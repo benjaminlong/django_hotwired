@@ -1,0 +1,15 @@
+{% load i18n %}
+
+<turbo-frame id="podcast_list">
+  <h2 class="">{% trans "You're podcasts" %}</h2>
+
+  {% for podcast in podcasts %}
+    <div class="podcast">
+      <h2 class="title">{{podcast.title}}</h2>
+    </div>
+  {% endfor %}
+
+  {% if podcasts.display_pager %}
+    Display pagination
+  {% endif %}
+</turbo-frame>

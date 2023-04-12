@@ -13,7 +13,7 @@ from django_hotwired.marketing.connectors import (
     mailchimp_update,
 )
 
-logger = logging.getLogger("newsomatic")
+logger = logging.getLogger("django_hotwired")
 mailchimp_error_msg = _("Our Subscription provider is currently offline")
 
 

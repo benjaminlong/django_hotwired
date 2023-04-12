@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+  {% include "components/navbars/default.html" %}
+
+  <div class="dashboard">
+    <div class="dashboard-menu">
+      <div class="dashboard-menu-content">
+        {% include "components/menus/dashboard.html" %}
+      </div>
+    </div>
+    <div class="dashboard-content">
+      <turbo-frame id="" url="{% url 'home' %}">
+        TODO - Load using turbo-frame the dashboard content
+      </turbo-frame>
+
+      <section id="about" class="hero hero-about is-fullheight is-bold has-text-centered">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">
+              Section About
+            </h1>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+{% endblock %}

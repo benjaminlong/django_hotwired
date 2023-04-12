@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './django_hotwired/_templates/**/*.html',
-    './django_hotwired/_assets/**/*.{js,jsx,ts,tsx,vue,html}',
+    "./django_hotwired_front/src/**/*.html",
+    "./django_hotwired_front/src/**/*.{js,jsx,ts,tsx,vue,html}",
   ],
   theme: {
     extend: {},

@@ -1,0 +1,60 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}Django Hotwired{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Jiben2">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}">
+
+    {% block css %}
+      <!-- Latest compiled and minified Bootstrap CSS -->
+      <!-- Your stuff: Third-party CSS libraries go here -->
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    {% endblock %}
+
+    {% include "webpack.html" %}
+  </head>
+
+  <body>
+    <div data-controller="dark-mode"
+         class="custom-control custom-switch">
+      <input type="checkbox" class="custom-control-input" id="darkSwitch" />
+      <label class="custom-control-label" for="darkSwitch">
+        {% trans "Dark Mode" %}
+      </label>
+    </div>
+
+    <div data-controller="tutorial-mode"
+         class="custom-control custom-switch">
+      <input type="checkbox" class="custom-control-input" id="tutorialSwitch" />
+      <label class="custom-control-label" for="tutorialSwitch">
+        {% trans "Display Tutorials" %}
+      </label>
+    </div>
+
+    {% block header %}{% endblock %}
+
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    {% block content %}{% endblock content %}
+  </body>
+</html>

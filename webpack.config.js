@@ -10,26 +10,27 @@ const templateContent = ({ htmlWebpackPlugin }) =>
   ${htmlWebpackPlugin.tags.headTags}
   ${htmlWebpackPlugin.tags.bodyTags}`;
 
-const __django_dir = path.resolve(__dirname, "django_hotwired")
+// const __django_dir = path.resolve(__dirname, "django_hotwired")
+const __front_dir = path.resolve(__dirname, "django_hotwired_front")
 
 module.exports = {
     entry: {
-        app: path.resolve(__django_dir, "_assets/application.js")
+        app: path.resolve(__front_dir, "src/app.js")
     },
     output: {
-        path: path.resolve(__django_dir, "_static", "dist"),
+        path: path.resolve(__front_dir, "build/dist"),
         filename: "[name].[contenthash].js",
         publicPath: "/static/dist/"
     },
     resolve: {
         extensions: ['.ts', '...'],
         alias: {
-            images: path.resolve(__django_dir, '_static/images/'),
+            images: path.resolve(__front_dir, 'public/images'),
         },
     },
     plugins: [
         new HtmlWebpackPlugin({
-            filename: path.resolve(__django_dir, "_templates", "webpack.html"),
+            filename: path.resolve(__front_dir, "src", "templates", "webpack.html"),
             inject: false,
             templateContent: templateContent,
             scriptLoading: "defer",
@@ -53,18 +54,18 @@ module.exports = {
             exclude: /node_modules/,
         }, {
             test: /\.js$/,
-            include: path.resolve(__django_dir, "_assets"),
+            include: path.resolve(__front_dir, "src"),
             loader: "babel-loader",
         }, {
             test: /\.(png|jpe?g|gif|svg|webp|avif)$/i,
-            type: 'asset/resource',
+            type: "asset/resource",
             generator: {
-                filename: 'images/[name].[contenthash:7][ext]'
+                filename: "images/[name].[contenthash:7][ext]"
             },
         }, {
             test: /\.(s[ac]ss|css)$/,
             exclude: /node_modules/,
-            include: path.resolve(__django_dir, '_assets'),
+            include: path.resolve(__front_dir, "src"),
             use: [
                 // Creates `style` nodes from JS strings
                 // 'style-loader',

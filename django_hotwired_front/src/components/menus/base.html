@@ -1,0 +1,18 @@
+{% load i18n %}
+
+<aside class="menu"
+       data-controller="menu">
+  <p class="menu-label">
+    General
+  </p>
+  <ul class="menu-list">
+    {% block menu_general_items %}
+      <li><a href="{% url 'work' %}">Work</a></li>
+      <li><a href="{% url 'components' %}">Components</a></li>
+      <li><a>Layouts</a></li>
+    {% endblock %}
+  </ul>
+
+  {% block menu_content %}
+  {% endblock %}
+</aside>

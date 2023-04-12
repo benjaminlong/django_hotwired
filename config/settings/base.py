@@ -10,6 +10,7 @@ from django.utils.translation import gettext_lazy as _
 ROOT_DIR = Path(__file__).parents[2]
 # django_hotwired/)
 APPS_DIR = ROOT_DIR / "django_hotwired"
+FRONT_DIR = ROOT_DIR / "django_hotwired_front"
 env = environ.Env()
 
 READ_DOT_ENV_FILE = env.bool("DJANGO_READ_DOT_ENV_FILE", default=True)
@@ -63,7 +64,7 @@ DJANGO_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
-    "django.contrib.sites",
+    # "django.contrib.sites",
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # "django.contrib.humanize", # Handy template tags
@@ -75,22 +76,25 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "django_hotwired.users.apps.UsersConfig",
+    "django_hotwired.podcasts.apps.PodcastsConfig",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
+# https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-DEFAULT_AUTO_FIELD
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
+
 # MIGRATIONS
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#migration-modules
-MIGRATION_MODULES = {"sites": "django_hotwired.contrib.sites.migrations"}
+# MIGRATION_MODULES = {"sites": "django_hotwired.contrib.sites.migrations"}
 
 # AUTHENTICATION
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#authentication-backends
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
-    #"allauth.account.auth_backends.AuthenticationBackend",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-user-model
 AUTH_USER_MODEL = "users.User"
@@ -141,7 +145,10 @@ STATIC_ROOT = str(ROOT_DIR / "staticfiles")
 # https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = [str(APPS_DIR / "_static")]
+STATICFILES_DIRS = [
+    str(FRONT_DIR / "build"),
+    str(FRONT_DIR / "public"),
+]
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
@@ -166,8 +173,8 @@ TEMPLATES = [
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         # https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
         "DIRS": [
-            str(APPS_DIR / "_templates"),
-            str(APPS_DIR / "_assets"),
+            str(FRONT_DIR / "src" ),
+            str(FRONT_DIR / "src/templates"),
         ],
         "OPTIONS": {
             # https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
@@ -193,14 +200,6 @@ TEMPLATES = [
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#form-renderer
 FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
-
-# http://django-crispy-forms.readthedocs.io/en/latest/install.html#template-packs
-CRISPY_TEMPLATE_PACK = "bootstrap4"
-
-# FIXTURES
-# ------------------------------------------------------------------------------
-# https://docs.djangoproject.com/en/dev/ref/settings/#fixture-dirs
-FIXTURE_DIRS = (str(APPS_DIR / "fixtures"),)
 
 # SECURITY
 # ------------------------------------------------------------------------------
@@ -254,44 +253,6 @@ LOGGING = {
     },
     "root": {"level": "INFO", "handlers": ["console"]},
 }
-
-
-# django-allauth
-# ------------------------------------------------------------------------------
-ACCOUNT_ALLOW_REGISTRATION = env.bool("DJANGO_ACCOUNT_ALLOW_REGISTRATION", True)
-# https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_AUTHENTICATION_METHOD = "username"
-# https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_EMAIL_REQUIRED = True
-# https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
-# https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_ADAPTER = "django_hotwired.users.adapters.AccountAdapter"
-# https://django-allauth.readthedocs.io/en/latest/configuration.html
-SOCIALACCOUNT_ADAPTER = "django_hotwired.users.adapters.SocialAccountAdapter"
-
-
-# Django Pipeline
-# PIPELINE = {
-#     'PIPELINE_ENABLED': False,
-#     'BABEL_BINARY': str(ROOT_DIR / 'node_modules' / '.bin' / 'babel'),
-#     # 'BABEL_ARGUMENTS': ['--presets', 'es5'],
-#     'CSS_COMPRESSOR': 'pipeline.compressors.yuglify.YuglifyCompressor',
-#     'JS_COMPRESSOR': 'pipeline.compressors.NoopCompressor',
-#     'COMPILERS': (
-#         'pipeline.compilers.es6.ES6Compiler',
-#         'pipeline.compilers.sass.SASSCompiler',
-#     ),
-#     'JAVASCRIPT': {
-#         'stimulus': {
-#             'source_filenames': (
-#               'js/controllers/*.es6',
-#               'js/application.es6',
-#             ),
-#             'output_filename': 'js/django-stimulus.js',
-#         }
-#     },
-# }
 
 # -----------------------------------------------------------------------------
 # Mailchimp
