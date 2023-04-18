@@ -1,0 +1,28 @@
+.dashboard {
+  @apply flex;
+}
+
+$menu-width: 250px;
+
+.dashboard-menu {
+  //@apply flex flex-row;
+  //@apply fixed top-0 left-0 bottom-0;
+  @apply relative;
+  //@apply font-semibold rounded-lg shadow-md;
+  @apply bg-gray-100;
+  @apply z-50;
+  //width: $menu-width;
+  //@apply hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+  //@apply disabled:opacity-50;
+
+}
+.dashboard-menu-content {
+  @apply sticky top-0 bottom-0 left-0;
+  @apply px-4 py-2;
+  @apply overflow-auto;
+}
+
+.dashboard-content {
+  @apply flex-1;
+  //margin-left: $menu-width;
+}

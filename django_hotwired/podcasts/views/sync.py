@@ -4,12 +4,21 @@ from django_hotwired.podcasts.models import Podcast
 from django_hotwired.contrib.paginators import pager
 
 
-def list_view(request):
+def index(request):
     queryset = Podcast.objects.all()
     podcasts = pager(queryset, request.GET.get("page"), items_per_page=20)
 
     context = {"podcasts": podcasts}
-    return render(request, "podcasts/sync/list.html", context)
+    return render(request, "podcasts/sync/index.html", context)
+
+
+def list_view(request):
+    """turbo view"""
+    queryset = Podcast.objects.all()
+    podcasts = pager(queryset, request.GET.get("page"), items_per_page=20)
+
+    context = {"podcasts": podcasts}
+    return render(request, "podcasts/sync/turbo/list.html", context)
 
 
 def detail_view(request, pk):

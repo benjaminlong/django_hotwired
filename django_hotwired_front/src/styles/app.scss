@@ -12,18 +12,13 @@
 
 // Importing Owned styles
 @import "home";
+@import "tutorial_theme";
 @import "layouts/dashboard";
 
 .hello {
   background: red;
   width: 10px;
   height: 10px;
-}
-
-[data-tutorial] {
-  turbo-frame {
-    border: 1px solid red;
-  }
 }
 
 [data-theme="dark"] {

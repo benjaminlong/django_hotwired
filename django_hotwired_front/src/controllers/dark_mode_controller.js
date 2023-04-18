@@ -5,17 +5,25 @@ function initTheme(darkSwitch) {
     localStorage.getItem("darkSwitch") !== null &&
     localStorage.getItem("darkSwitch") === "dark";
   darkSwitch.checked = darkThemeSelected;
-  darkThemeSelected
-    ? document.body.setAttribute("data-theme", "dark")
-    : document.body.removeAttribute("data-theme");
+
+  if (darkThemeSelected) {
+    document.documentElement.classList.add('dark');
+    document.body.setAttribute("data-theme", "dark");
+    return
+  }
+
+  document.documentElement.classList.remove('dark');
+  document.body.removeAttribute("data-theme");
 }
 
 function resetTheme(darkSwitch) {
   if (darkSwitch.checked) {
     document.body.setAttribute("data-theme", "dark");
+    document.documentElement.classList.add('dark');
     localStorage.setItem("darkSwitch", "dark");
   } else {
     document.body.removeAttribute("data-theme");
+    document.documentElement.classList.remove('dark');
     localStorage.removeItem("darkSwitch");
   }
 }

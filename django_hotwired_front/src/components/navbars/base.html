@@ -1,7 +1,7 @@
 {% load static i18n %}
 
 <section data-controller="navbar">
-  <nav class="navbar border-b drop-shadow bg-white z-50"
+  <nav class="navbar border-b drop-shadow bg-white z-10"
        role="navigation"
        aria-label="main navigation"
        data-controller="navbar">
@@ -23,15 +23,6 @@
     <div class="navbar-menu">
       <div class="navbar-start">
         {% block navbar_menu_start_items %}
-          <a class="navbar-item" href="{% url 'work' %}">
-            {% trans "Idea" %}
-          </a>
-          <a class="navbar-item" href="{% url 'components' %}">
-            {% trans "Components" %}
-          </a>
-          <a class="navbar-item" href="{% url 'about' %}">
-            {% trans "About" %}
-          </a>
         {% endblock %}
       </div>
       <div class="navbar-end">
@@ -48,10 +39,8 @@
         <!-- Any other Bulma elements you want -->
         <div class="menu">
           <div class="menu-list  has-text-centered">
-            <li><a href="{% url 'home' %}">{% trans "The Sofa's Lab" %}</a></li>
-            <a href="{% url 'work' %}">{% trans 'Idea' %}</a>
-            <a href="{% url 'components' %}">{% trans 'Components' %}</a>
-            <a href="{% url 'about' %}">{% trans 'About' %}</a>
+            {% block modal_menu_list %}
+            {% endblock %}
           </div>
         </div>
       </div>
