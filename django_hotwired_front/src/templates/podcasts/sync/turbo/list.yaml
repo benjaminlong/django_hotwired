@@ -1,0 +1,8 @@
+context:
+  podcasts:
+    display_pager: false
+    object_list:
+      - pk: 1
+        title: Hello World 1
+      - pk: 2
+        title: Hello World 2

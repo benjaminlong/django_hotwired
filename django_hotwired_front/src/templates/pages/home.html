@@ -3,11 +3,13 @@
 
 {% block content %}
 
-  {% include "components/heros/home.html" %}
-
   <div class="sticky top-0">
-    {% include "components/navbars/default.html" %}
+    {% include "components/shared/navbars/default.html" %}
   </div>
+
+  {% trans "The Sofa Lab" as title %}
+  {% trans "Just telling \"how it works\" is not always enough to get your ideas across, while neither is just showing them running." as description %}
+  {% include "components/home/hero.html" with title=title description=description %}
 
   <div class="p-5">TOTO</div>
 

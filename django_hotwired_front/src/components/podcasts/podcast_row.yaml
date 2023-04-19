@@ -1,0 +1,5 @@
+name: Row Podcast Component
+context:
+  podcast:
+    pk: 1
+    title: "Podcast Title Placeholder"

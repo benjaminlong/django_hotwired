@@ -3,10 +3,8 @@
 <turbo-frame id="podcast_list">
   <h2 class="">{% trans "You're podcasts" %}</h2>
 
-  {% for podcast in podcasts %}
-    <div class="podcast">
-      <h2 class="title">{{podcast.title}}</h2>
-    </div>
+  {% for podcast in podcasts.object_list %}
+    {% include "components/podcasts/podcast_row.html" with podcast=podcast %}
   {% endfor %}
 
   {% if podcasts.display_pager %}

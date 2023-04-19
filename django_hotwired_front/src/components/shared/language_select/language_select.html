@@ -11,7 +11,7 @@
   <input name="next" type="hidden" value="{{ redirect_to }}">
   <div class="control has-icons-left">
     <div class="select is-rounded">
-      <select class="" name="language" onchange="this.form.submit()">
+      <select class="dark:bg-gray-700 dark:text-white" name="language" onchange="this.form.submit()">
         {% for language in languages %}
           <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
             {{ language.name_local|title }}

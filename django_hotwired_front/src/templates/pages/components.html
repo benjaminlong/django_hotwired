@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="sticky top-0">
-  {% include "components/navbars/default.html" %}
+  {% include "components/shared/navbars/default.html" %}
 </div>
 
 <div class="">
@@ -20,7 +20,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
         <div class="flex flex-col">
           <h4 class="font-semibold text-lg">Language Select</h4>
-          {% include "components/forms/language_select.html" %}
+          {% include "components/shared/language_select/language_select.html" %}
         </div>
       </div>
     </div>
@@ -29,10 +29,10 @@
       <h3 class="font-semibold text-lg">Navbars</h3>
 
       <h4>Base</h4>
-      {% include "components/navbars/base.html" %}
+      {% include "components/shared/navbars/base.html" %}
 
       <h4>Default</h4>
-      {% include "components/navbars/default.html" %}
+      {% include "components/shared/navbars/default.html" %}
     </div>
 
     <div class="py-2 px-3 border">

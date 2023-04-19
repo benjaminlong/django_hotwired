@@ -1,0 +1,16 @@
+{% load i18n %}
+<div data-controller="dark-mode"
+     class="custom-control custom-switch">
+  <input type="checkbox" class="custom-control-input" id="darkSwitch" />
+  <label class="custom-control-label" for="darkSwitch">
+    {% trans "Dark Mode" %}
+  </label>
+</div>
+
+<div data-controller="tutorial-mode"
+     class="custom-control custom-switch">
+  <input type="checkbox" class="custom-control-input" id="tutorialSwitch" />
+  <label class="custom-control-label" for="tutorialSwitch">
+    {% trans "Display Tutorials" %}
+  </label>
+</div>

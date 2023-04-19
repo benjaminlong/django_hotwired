@@ -6,14 +6,22 @@
 Welcome to Django Hotwired
 ==========================
 
+* **First steps**
+
+  * :doc:`source/install`
+
+
+Index
+-----
+
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
+   source/install
    source/getting-started/install
    source/getting-started/django_clis
    source/guidelines/git
-
 
 
 .. toctree::

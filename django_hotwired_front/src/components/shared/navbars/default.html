@@ -1,0 +1,27 @@
+{% extends "components/shared/navbars/base.html" %}
+{% load static i18n %}
+
+{% block navbar_menu_start_items %}
+  <a class="navbar-item" href="{% url 'components' %}">
+    {% trans "Components" %}
+  </a>
+  <a class="navbar-item" href="{% url 'layouts_dashboard' %}">
+    {% trans "Layouts" %}
+  </a>
+  <a class="navbar-item" href="{% url 'about' %}">
+    {% trans "About" %}
+  </a>
+  <a class="navbar-item" href="{% url 'podcasts:podcast_index' %}">
+    {% trans "Podcasts" %}
+  </a>
+{% endblock %}
+
+
+{% block modal_menu_list %}
+  <li>
+    <a href="{% url 'home' %}">{% trans "The Sofa's Lab" %}</a>
+    <a href="{% url 'work' %}">{% trans 'Idea' %}</a>
+    <a href="{% url 'components' %}">{% trans 'Components' %}</a>
+    <a href="{% url 'podcasts:podcast_index' %}">{% trans 'Podcasts' %}</a>
+  </li>
+{% endblock %}

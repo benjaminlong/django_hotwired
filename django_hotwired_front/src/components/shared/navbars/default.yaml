@@ -1,0 +1,7 @@
+context:
+  left_items:
+    - url: /components
+      text: "Components"
+  modal_items:
+    - url: /components
+      text: "Components"

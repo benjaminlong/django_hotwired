@@ -1,0 +1,7 @@
+name: Hero
+context:
+  title: "The Sofa Lab"
+  description: "Just telling \"how it works\" is not always enough to get your ideas across, while neither is just showing them running."
+  cta:
+    url: /about
+    text: "Discover"
