@@ -10,7 +10,7 @@ from django.utils.translation import gettext_lazy as _
 ROOT_DIR = Path(__file__).parents[2]
 # django_hotwired/)
 APPS_DIR = ROOT_DIR / "django_hotwired"
-FRONT_DIR = ROOT_DIR / "django_hotwired_front"
+FRONT_DIR = ROOT_DIR / "client"
 env = environ.Env()
 
 READ_DOT_ENV_FILE = env.bool("DJANGO_READ_DOT_ENV_FILE", default=True)

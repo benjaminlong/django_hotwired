@@ -11,7 +11,7 @@ const templateContent = ({ htmlWebpackPlugin }) =>
   ${htmlWebpackPlugin.tags.bodyTags}`;
 
 // const __django_dir = path.resolve(__dirname, "django_hotwired")
-const __front_dir = path.resolve(__dirname, "django_hotwired_front")
+const __front_dir = path.resolve(__dirname, "client")
 
 module.exports = {
     entry: {
