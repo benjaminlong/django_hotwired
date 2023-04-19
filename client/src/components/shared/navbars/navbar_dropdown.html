@@ -1,0 +1,53 @@
+{% load i18n %}
+<div class="navbar-item has-dropdown is-hoverable">
+  <div class="navbar-link flex flex-col justify-center py-1">
+<!--    <figure class="image is-48x48 is-user-avatar">-->
+<!--      <img class='is-rounded hidden'-->
+<!--           src=""-->
+<!--           alt="">-->
+<!--    </figure>-->
+    <span class="">
+      <i class="fa fa-cog"></i>
+    </span>
+  </div>
+
+  <div class="navbar-dropdown is-right">
+    <div data-controller="dark-mode"
+         class="navbar-item">
+      <label class="custom-control-label" for="darkSwitch">
+        {% trans "Dark Mode" %}
+        <input type="checkbox" class="custom-control-input" id="darkSwitch" />
+      </label>
+    </div>
+    <div data-controller="tutorial-mode"
+         class="navbar-item">
+      <label class="custom-control-label" for="tutorialSwitch">
+        {% trans "Display Tutorials" %}
+        <input type="checkbox" class="custom-control-input" id="tutorialSwitch" />
+      </label>
+    </div>
+
+    <div class="border-t-2 menu-divider mt-2"></div>
+
+    <div class="mx-2 menu-label">Info</div>
+    <ul class="menu-list">
+      <li>
+        <a href="{% url 'components' %}"
+           class="menu-item navbar-item">
+          {% trans 'Components' %}
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'podcasts:podcast_index' %}"
+           class="menu-item navbar-item">
+          {% trans 'Podcasts' %}
+        </a>
+      </li>
+    </ul>
+
+    <div class="menu-divider"></div>
+    <div class="navbar-item">
+      {% trans 'Log out' %}
+    </div>
+  </div> {% comment %}end dropdown{% endcomment %}
+</div>{% comment %}end navbar-item{% endcomment %}

@@ -1,7 +1,10 @@
+name: Default
 context:
-  left_items:
-    - url: /components
-      text: "Components"
-  modal_items:
-    - url: /components
-      text: "Components"
+  home_title: "TheSofa's Lab"
+#context:
+#  left_items:
+#    - url: /components
+#      text: "Components"
+#  modal_items:
+#    - url: /components
+#      text: "Components"

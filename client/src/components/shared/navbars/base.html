@@ -7,7 +7,11 @@
        data-controller="navbar">
     <div class="navbar-brand is-fullwidth">
       <a class="navbar-item" href="{% url 'home' %}">
-        {{ home_title }}
+        {% if home_title %}
+          {{ home_title }}
+        {% else %}
+          {% trans "The Sofa's Lab" %}
+        {% endif %}
       </a>
 
       <a role="button"
