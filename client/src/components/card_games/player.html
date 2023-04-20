@@ -1,0 +1,5 @@
+<div class="player">
+  <div class="">{{ player.name }}</div>
+  <i class="fas fa-user fa-4x"></i>
+  {% include "components/card_games/hand.html" with cards=player.cards open_cards=open_cards %}
+</div>

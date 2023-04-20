@@ -1,0 +1,9 @@
+name: "Card"
+context:
+  open: true
+  card:
+    value: 11
+    name: "J"
+    suit: "diamond"
+    color: "red"
+    trump: false

@@ -1,0 +1,6 @@
+
+<div class="player-card-hand flex flex-row">
+  {% for card in cards %}
+    {% include "components/card_games/card.html" with card=card open=player.open_cards %}
+  {% endfor %}
+</div>

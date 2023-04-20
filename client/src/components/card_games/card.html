@@ -1,0 +1,7 @@
+<div class="card border rounded-md text-sm {% if card.color == 'red' %}text-red-600{% endif %} font-semibold dark:bg-gray-500">
+  {% if open %}
+    <span>{{card.name}} <i class="fas fa-{{card.suit}} text-xs"></i></span>
+  {% else %}
+    <span class="bg-gray-400 absolute inset-0"></span>
+  {% endif %}
+</div>
