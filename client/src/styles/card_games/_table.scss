@@ -1,0 +1,42 @@
+
+.table {
+  width: calc(100vw - 5rem);
+  height: 100vh;
+  margin: 0 auto;
+
+  @apply bg-green-700 relative;
+
+  .middle {
+    border: 2px dotted #cccccc;
+    position: absolute;
+    top: 5rem;
+    bottom: 5rem;
+    left: 10rem;
+    right: 10rem;
+  }
+
+  .players {
+    .player-1 {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      @apply transform -translate-y-1/2;
+    }
+    .player-2 {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      @apply transform -translate-y-1/2;
+    }
+    .player-3 {
+      position: absolute;
+      top: 0;
+      left: 50%;
+    }
+    .player-4 {
+      position: absolute;
+      bottom: 0;
+      right: 50%;
+    }
+  }
+}

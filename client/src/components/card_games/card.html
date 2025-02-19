@@ -1,7 +1,11 @@
-<div class="card border rounded-md text-sm {% if card.color == 'red' %}text-red-600{% endif %} font-semibold dark:bg-gray-500">
+{% load i18n %}
+<div class="card rounded-md text-sm {% if card.color == 'red' %}text-red-600{% endif %} font-semibold dark:bg-gray-300"
+     {{ attrs }}>
   {% if open %}
-    <span>{{card.name}} <i class="fas fa-{{card.suit}} text-xs"></i></span>
+    <span class="border-2 border-gray-300 absolute inset-0 rounded dark:border-gray-400">
+      {{card.name}}<i class="fas fa-{{card.suit}} text-xs"></i>
+    </span>
   {% else %}
-    <span class="bg-gray-400 absolute inset-0"></span>
+    <span class="border-4 border-gray-200 bg-gray-400 absolute inset-0 rounded dark:border-gray-300 dark:bg-gray-500"></span>
   {% endif %}
 </div>

@@ -1,0 +1,22 @@
+{% load i18n %}
+
+<div class="table">
+
+  <div class="middle flex flex-col justify-center">
+    <h1 class="text-center font-semibold text-white">
+      {% trans "Let's play battle" %}
+    </h1>
+
+    <div class="flex flex-row justify-center">
+      {% include "components/card_games/card_deck.html" with cards=cards %}
+    </div>
+  </div>
+
+  <div class="players">
+    {% for player in players %}
+      <div class="player-{{ forloop.counter }}">
+        {% include "components/card_games/player.html" with player=player open_cards=False %}
+      </div>
+    {% endfor %}
+  </div>
+</div>

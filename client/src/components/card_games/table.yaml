@@ -1,0 +1,90 @@
+name: "Table"
+context:
+  cards:
+    - value: 11
+      name: "J"
+      suit: "diamond"
+      color: "red"
+      trump: false
+    - value: 2
+      name: "2"
+      suit: "diamond"
+      color: "red"
+      trump: false
+    - value: 4
+      name: "4"
+      suit: "heart"
+      color: "red"
+      trump: false
+    - value: 13
+      name: "K"
+      suit: "club"
+      color: "black"
+      trump: false
+    - value: 11
+      name: "J"
+      suit: "heart"
+      color: "red"
+      trump: false
+    - value: 2
+      name: "2"
+      suit: "heart"
+      color: "red"
+      trump: false
+    - value: 4
+      name: "4"
+      suit: "diamond"
+      color: "red"
+      trump: false
+    - value: 13
+      name: "K"
+      suit: "spade"
+      color: "black"
+      trump: false
+  players:
+    - name: "Toto"
+      open_cards: true
+      cards:
+        - value: 11
+          name: "J"
+          suit: "diamond"
+          color: "red"
+          trump: false
+        - value: 2
+          name: "2"
+          suit: "diamond"
+          color: "red"
+          trump: false
+        - value: 4
+          name: "4"
+          suit: "heart"
+          color: "red"
+          trump: false
+        - value: 13
+          name: "K"
+          suit: "club"
+          color: "black"
+          trump: false
+    - name: "Titi"
+      open_cards: false
+      cards:
+        - value: 11
+          name: "J"
+          suit: "heart"
+          color: "red"
+          trump: false
+        - value: 2
+          name: "2"
+          suit: "heart"
+          color: "red"
+          trump: false
+        - value: 4
+          name: "4"
+          suit: "diamond"
+          color: "red"
+          trump: false
+        - value: 13
+          name: "K"
+          suit: "spade"
+          color: "black"
+          trump: false

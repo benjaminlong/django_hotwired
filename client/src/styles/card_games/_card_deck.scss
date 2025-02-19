@@ -1,0 +1,14 @@
+.card-deck {
+
+  .card {
+    &.card:not(:first-of-type) {
+      margin-left: -99px;
+    }
+  }
+
+  &.is-spread {
+    .card:not(:first-of-type) {
+      margin-left: -85px;
+    }
+  }
+}

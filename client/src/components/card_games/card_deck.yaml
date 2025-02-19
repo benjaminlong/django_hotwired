@@ -1,0 +1,39 @@
+name: "Card Deck"
+context:
+  class_names: ""
+  cards:
+    - value: 1
+      name: "A"
+      suit: "diamond"
+      color: "red"
+      trump: false
+    - value: 2
+      name: "2"
+      suit: "diamond"
+      color: "red"
+      trump: false
+    - value: 3
+      name: "3"
+      suit: "diamond"
+      color: "red"
+      trump: false
+    - value: 4
+      name: "4"
+      suit: "diamond"
+      color: "red"
+      trump: false
+    - value: 5
+      name: "5"
+      suit: "diamond"
+      color: "red"
+      trump: false
+    - value: 6
+      name: "6"
+      suit: "diamond"
+      color: "red"
+      trump: false
+    - value: 7
+      name: "7"
+      suit: "diamond"
+      color: "red"
+      trump: false

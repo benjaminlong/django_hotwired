@@ -12,7 +12,9 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts/";
 // Importing Owned styles
 @import "variables";
 @import "card_games/card";
+@import "card_games/card_deck";
 @import "card_games/hand";
+@import "card_games/table";
 @import "layouts/dashboard";
 @import "home";
 @import "tutorial_theme";

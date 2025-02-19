@@ -1,0 +1,15 @@
+{% load i18n %}
+<div class="card-deck {{class_names}}"
+     data-controller="card-deck" {{ attrs }}>
+  <div class="inline-flex">
+    {% for card in cards %}
+      {% include "components/card_games/card.html" with card=card open=false attrs="data-card-deck-target='card'" %}
+    {% endfor %}
+  </div>
+
+  <div class="flex flex-row justify-center">
+    <button class="button" data-action="card-deck#toggle_spread">
+      {% trans "Spread" %}
+    </button>
+  </div>
+</div>

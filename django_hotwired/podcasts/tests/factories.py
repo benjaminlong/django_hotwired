@@ -12,7 +12,6 @@ class PodcastFactory(factory.django.DjangoModelFactory):
         model = Podcast
 
     title = faker.sentence()
-
     status = "draft"
 
     text = faker.paragraph()

@@ -5,6 +5,10 @@ from django_hotwired.contrib.paginators import pager
 
 
 def index(request):
+    """Index view
+    :param request: HttpRequest
+    :return: HttpResponse
+    """
     queryset = Podcast.objects.all()
     podcasts = pager(queryset, request.GET.get("page"), items_per_page=20)
 
