@@ -1,19 +1,16 @@
 // Importing bulma
-@import "bulma";
-
+@use "bulma";
 // Importing Tailwindcss
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@use "tailwindcss";
 
 // Importing fontawesome
-@import "@fortawesome/fontawesome-free/css/all.css";
-
-//@import "tailwindcss/base";
-//@import "tailwindcss/components";
-//@import "tailwindcss/utilities";
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts/";
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
 
 // Importing Owned styles
+@import "variables";
 @import "card_games/card";
 @import "card_games/hand";
 @import "layouts/dashboard";

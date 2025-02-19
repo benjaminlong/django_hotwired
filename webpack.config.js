@@ -1,8 +1,10 @@
 var path = require('path');
+const glob = require("glob-all");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginDjango = require("html-webpack-plugin-django");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
 
 // TODO: Add comment
 const templateContent = ({ htmlWebpackPlugin }) =>
@@ -45,7 +47,22 @@ module.exports = {
             // both options are optional
             filename: "[name].[contenthash].css",
             chunkFilename: "[name].[id].css"
-        })
+        }),
+        new PurgeCSSPlugin({
+            // defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
+            // defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+            defaultExtractor: content => content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [],
+            paths: glob.sync(
+              // path.join(__front_dir, "src/**/*.html"),
+              // { nodir: true }
+              [
+                path.join(__front_dir, "src/**/*.{js,jsx,ts,tsx,html}"),
+                path.join(__front_dir, "src/components/**/*.{js,jsx,ts,tsx,html}"),
+                path.join(__front_dir, "src/templates/**/*.{js,jsx,ts,tsx,html}"),
+              ],
+            ),
+
+        }),
     ],
     module: {
         rules: [{
