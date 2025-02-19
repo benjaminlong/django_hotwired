@@ -1,22 +1,20 @@
 # Django
 # ------------------------------------------------------------------------------
-django>=4.0.0  # pyup: < 3.1  # https://www.djangoproject.com/
-django-environ>=0.4.5  # https://github.com/joke2k/django-environ
-django-model-utils>=4.3.0  # https://github.com/jazzband/django-model-utils
+django>=5.1.0  # https://www.djangoproject.com/
+django-environ>=0.12.0  # https://github.com/joke2k/django-environ
+django-model-utils>=5.0.0  # https://github.com/jazzband/django-model-utils
 
 # -----------------------------------------------------------------------------
 # Python-sql Database Adapter
 # -----------------------------------------------------------------------------
-psycopg2-binary>=2.8.6 # https://github.com/psycopg/psycopg2
+psycopg2-binary>=2.9.10 # https://github.com/psycopg/psycopg2
 
 
 # -----------------------------------------------------------------------------
 # Python Tools
 # -----------------------------------------------------------------------------
-pytz>=2019.3  # https://github.com/stub42/pytz
-#python-slugify>=4.0.0  # https://github.com/un33k/python-slugify
-#Pillow>=8.1.1  # https://github.com/python-pillow/Pillow
-argon2-cffi==19.2.0  # https://github.com/hynek/argon2_cffi
+pytz  # https://github.com/stub42/pytz
+argon2-cffi>=23.1.0  # https://github.com/hynek/argon2_cffi
 
 # -----------------------------------------------------------------------------
 # Mailchimp Client to ease Marketing Email Newsletter Integration
