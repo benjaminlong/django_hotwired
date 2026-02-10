@@ -35,7 +35,7 @@
     "purgecss-webpack-plugin": "^7.0.2",
     "sass": "^1.85.0",
     "sass-loader": "^16.0.5",
-    "webpack": "^5.98.0",
+    "webpack": "^5.104.1",
     "webpack-cli": "^6.0.1"
   }
 }
